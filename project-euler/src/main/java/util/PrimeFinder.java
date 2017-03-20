@@ -1,4 +1,4 @@
-package problems.problem7;
+package util;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,21 +21,46 @@ public class PrimeFinder {
 		}
 
 		// TODO: Find a way to cache the primes instead of deleting them every
+		// time. Maybe checking primes.size().
+		primes.clear();
+
+		primes.add(2L);
+
+		long i = 3;
+		while (primes.size() < n) {
+			if (isPrime(i)) {
+				primes.add(i);
+			}
+			i += 2;
+		}
+		return primes.get(primes.size() - 1);
+	}
+
+	/**
+	 * Returns the list of primes that are strictly less than {@code n}.
+	 */
+	public static List<Long> getPrimesBelow(int n) {
+
+		if (n <= 2) {
+			return new ArrayList<>();
+		}
+		
+		// TODO: Find a way to cache the primes instead of deleting them every
 		// time. Maybe checking primeCount.
 		primes.clear();
 		
 		primes.add(2L);
-		int primeCount = 1;
 		
 		long i = 3;
-		while (primeCount < n) {
+		while (i < n) {
 			if (isPrime(i)) {
 				primes.add(i);
-				primeCount++;
 			}
 			i += 2;
 		}
-		return primes.get(primeCount - 1);
+		
+		return new ArrayList<>(primes);
+		
 	}
 
 	private static boolean isPrime(long n) {

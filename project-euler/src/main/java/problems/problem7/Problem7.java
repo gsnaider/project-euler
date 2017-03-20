@@ -1,5 +1,7 @@
 package problems.problem7;
 
+import util.PrimeFinder;
+
 public class Problem7 {
 
 //	private static final int N = 6;
