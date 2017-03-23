@@ -25,10 +25,16 @@ public class Problem12 {
 		long max = Math.round(Math.sqrt(n));
 		for (int i = 1; i <= max; i++) {
 			if (n % i == 0) {
-				factors++;
+				factors += 2;
 			}
 		}
-		return factors * 2;
+		
+		// Correction for cases where n is a perfect square.
+		if (n == max*max) {
+			factors--;
+		}
+		
+		return factors;
 	}
 	
 }
