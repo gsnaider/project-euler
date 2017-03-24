@@ -14,7 +14,8 @@ public class Problem16 {
 		
 		long sum = 0;
 		for (int i = 0; i < result.length(); i++) {
-			sum += result.charAt(i);
+			int digit = Character.digit(result.charAt(i), 10);
+			sum += digit;
 		}
 		System.out.println(sum);
 	}
