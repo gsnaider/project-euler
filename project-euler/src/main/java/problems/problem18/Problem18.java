@@ -5,6 +5,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import util.BinaryTreeNode;
+
 public class Problem18 {
 	
 //	private static final int[][] nums =
@@ -30,32 +32,32 @@ public class Problem18 {
 		{63, 66,  4, 68, 89, 53, 67, 30, 73, 16, 69, 87, 40, 31},
 		{04, 62, 98, 27, 23, 9, 70, 98, 73, 93, 38, 53, 60,  4, 23}};
 	
-	private static final Map<Node<Integer>, Long> maxPaths = new HashMap<>();
+	private static final Map<BinaryTreeNode<Integer>, Long> maxPaths = new HashMap<>();
 	
 	public static void main(String[] args) {
 	
-		List<Node<Integer>> previousRow = null;
+		List<BinaryTreeNode<Integer>> previousRow = null;
 		for (int row = nums.length - 1; row >= 0; row--) {
-			List<Node<Integer>> nodeRow = new ArrayList<>(nums[row].length);
+			List<BinaryTreeNode<Integer>> nodeRow = new ArrayList<>(nums[row].length);
 			for (int col = 0; col < nums[row].length; col++) {
 				if (previousRow == null) {
-					nodeRow.add(new Node<Integer>(nums[row][col]));
+					nodeRow.add(new BinaryTreeNode<Integer>(nums[row][col]));
 				} else {
-					Node<Integer> leftChild = previousRow.get(col);
-					Node<Integer> rightChild = previousRow.get(col + 1);
-					nodeRow.add(new Node<Integer>(nums[row][col], leftChild, rightChild));
+					BinaryTreeNode<Integer> leftChild = previousRow.get(col);
+					BinaryTreeNode<Integer> rightChild = previousRow.get(col + 1);
+					nodeRow.add(new BinaryTreeNode<Integer>(nums[row][col], leftChild, rightChild));
 				}
 			}
 			previousRow = nodeRow;
 		}
 		
-		Node<Integer> root = previousRow.get(0);
+		BinaryTreeNode<Integer> root = previousRow.get(0);
 		
 		System.out.println(maxPath(root));
 		
 	}
 
-	private static long maxPath(Node<Integer> node) {
+	private static long maxPath(BinaryTreeNode<Integer> node) {
 		if (maxPaths.containsKey(node)) {
 			return maxPaths.get(node);
 		}
