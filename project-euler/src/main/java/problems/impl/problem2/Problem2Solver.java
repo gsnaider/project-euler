@@ -2,7 +2,7 @@ package problems.impl.problem2;
 
 import problems.ProblemSolver;
 
-final class Problem2Solver implements ProblemSolver {
+public final class Problem2Solver implements ProblemSolver {
 
 	private static final int MAX = 4000000;
 	

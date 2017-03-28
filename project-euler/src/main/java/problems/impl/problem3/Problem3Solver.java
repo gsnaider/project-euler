@@ -5,7 +5,7 @@ import java.util.List;
 
 import problems.ProblemSolver;
 
-final class Problem3Solver implements ProblemSolver {
+public final class Problem3Solver implements ProblemSolver {
 
 //	private static final long NUM = 13195L;
 	private static final long NUM = 600851475143L;

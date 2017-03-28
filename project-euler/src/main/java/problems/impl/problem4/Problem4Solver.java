@@ -1,8 +1,11 @@
 package problems.impl.problem4;
 
-final class Problem4 {
+import problems.ProblemSolver;
 
-	public static void main(String[] args) {
+public final class Problem4Solver implements ProblemSolver {
+
+	@Override
+	public String solve() {
 		int largestPalindrome = 0;
 		
 		for (int i = 100; i < 1000; i++) {
@@ -14,7 +17,7 @@ final class Problem4 {
 			}
 		}
 		
-		System.out.println(largestPalindrome);
+		return String.valueOf(largestPalindrome);
 	}
 
 	private static boolean isPalindrome(int n) {
