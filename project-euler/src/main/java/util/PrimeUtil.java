@@ -26,7 +26,7 @@ public class PrimeUtil {
 			}
 			i += 2;
 		}
-		return i;
+		return i - 2;
 	}
 
 	/**
@@ -38,7 +38,6 @@ public class PrimeUtil {
 			return primes;
 		}
 		
-		int count = 1;
 		long i = 3;
 		while (i < n) {
 			if (isPrime(i)) {

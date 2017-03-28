@@ -1,5 +1,7 @@
 package problems.impl.problem10;
 
+import util.PrimeUtil;
+
 final class Problem10 {
 
 //	private static final int MAX = 10;
@@ -11,25 +13,11 @@ final class Problem10 {
 		
 		long i = 3;
 		while (i < MAX) {
-			if (isPrime(i)) {
+			if (PrimeUtil.isPrime(i)) {
 				sum += i;
 			}
 			i += 2;
 		}
-		
 		System.out.println(sum);
-		
 	}
-
-
-	private static boolean isPrime(long num) {
-		final long sqrt = Math.round(Math.sqrt(num));
-		for (int i = 2; i <= sqrt; i++) {
-			if (num % i == 0) {
-				return false;
-			}
-		}
-		return true;
-	}
-
 }
