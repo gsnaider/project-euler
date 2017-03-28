@@ -1,11 +1,13 @@
 package problems.impl.problem2;
 
-final class Problem2 {
+import problems.ProblemSolver;
+
+final class Problem2Solver implements ProblemSolver {
 
 	private static final int MAX = 4000000;
 	
-	public static void main(String[] args) {
-		
+	@Override
+	public String solve() {
 		int prev = 1;
 		int fib = 2;
 		
@@ -19,8 +21,7 @@ final class Problem2 {
 			prev = fib;
 			fib = next;
 		} while (fib <= MAX);
-		
-		System.out.println(sum);
-	}
 	
+		return String.valueOf(sum);
+	}
 }
