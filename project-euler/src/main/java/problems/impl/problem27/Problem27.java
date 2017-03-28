@@ -28,7 +28,7 @@ final class Problem27 {
 				long n = 0;
 				long possiblePrime;
 				do {
-					possiblePrime = (n + a)*n + b;
+					possiblePrime = Math.abs((n + a)*n + b);
 					n++;
 				} while (PrimeUtil.isPrime(possiblePrime));
 				long primes = n - 1;
@@ -41,8 +41,6 @@ final class Problem27 {
 			}
 		}
 		
-		System.out.println(maxPrimes);
-		System.out.println(String.format("a: %d, b: %d", bestA, bestB));
 		System.out.println(product);
 
 	}

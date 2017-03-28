@@ -51,6 +51,9 @@ public class PrimeUtil {
 	}
 
 	public static boolean isPrime(long num) {
+		if (num < 0) {
+			throw new IllegalArgumentException();
+		}
 		final long sqrt = Math.round(Math.sqrt(num));
 		for (int i = 2; i <= sqrt; i++) {
 			if (num % i == 0) {
