@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 import util.BinaryTreeNode;
 
-public class Problem67 {
+final class Problem67 {
 
 	private static final Map<BinaryTreeNode<Integer>, Long> maxPaths = new HashMap<>();
 

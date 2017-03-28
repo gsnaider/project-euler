@@ -1,7 +1,7 @@
 package problems.problem17;
 import static problems.problem17.Constants.*;
 
-public class Problem17 {
+final class Problem17 {
 
 //	private static final int MAX = 5;
 	private static final int MAX = 1000;

@@ -2,7 +2,7 @@ package problems.problem16;
 
 import java.math.BigInteger;
 
-public class Problem16 {
+final class Problem16 {
 
 //	private static final int EXP = 15;
 	private static final int EXP = 1000;

@@ -3,7 +3,7 @@ package problems.problem3;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Problem3 {
+final class Problem3 {
 
 //	private static final long NUM = 13195L;
 	private static final long NUM = 600851475143L;

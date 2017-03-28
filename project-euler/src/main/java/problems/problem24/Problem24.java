@@ -4,7 +4,7 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
-public class Problem24 {
+final class Problem24 {
 
 	private static final int MILLION = 1000000;
 

@@ -3,7 +3,7 @@ package problems.problem11;
 import problems.problem11.util.DirectionValidator;
 import problems.problem11.util.ProductCalculator;
 
-public class Problem11 {
+final class Problem11 {
 
 	public static void main(String[] args) {
 

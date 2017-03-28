@@ -1,6 +1,6 @@
 package problems.problem4;
 
-public class Problem4 {
+final class Problem4 {
 
 	public static void main(String[] args) {
 		int largestPalindrome = 0;

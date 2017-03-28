@@ -2,7 +2,7 @@ package problems.problem20;
 
 import java.math.BigInteger;
 
-public class Problem20 {
+final class Problem20 {
 
 //	private static final int MAX = 10;
 	private static final int MAX = 100;

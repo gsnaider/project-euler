@@ -1,6 +1,6 @@
 package problems.problem10;
 
-public class Problem10 {
+final class Problem10 {
 
 //	private static final int MAX = 10;
 	private static final int MAX = 2000000;

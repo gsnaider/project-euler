@@ -1,6 +1,6 @@
 package problems.problem23;
 
-public class Problem23 {
+final class Problem23 {
 
 	private static final int MAX = 28123;
 	private static final int[] abundantNumbers = new int[MAX];

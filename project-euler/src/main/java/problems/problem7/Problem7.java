@@ -2,7 +2,7 @@ package problems.problem7;
 
 import util.PrimeFinder;
 
-public class Problem7 {
+final class Problem7 {
 
 //	private static final int N = 6;
 	private static final int N = 10001;

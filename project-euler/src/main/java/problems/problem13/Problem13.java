@@ -5,7 +5,7 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
-public class Problem13 {
+final class Problem13 {
 
 	public static void main(String[] args) {
 		final Set<BigInteger> nums = new HashSet<>();

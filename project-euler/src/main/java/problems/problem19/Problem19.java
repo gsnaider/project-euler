@@ -4,7 +4,7 @@ import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.Month;
 
-public class Problem19 {
+final class Problem19 {
 
 	private static final int FIRST_YEAR = 1901;
 	private static final int LAST_YEAR = 2000;

@@ -1,6 +1,6 @@
 package problems.problem1;
 
-public class Problem1 {
+final class Problem1 {
 
 	public static void main(String[] args) {
 		int sum = 0;

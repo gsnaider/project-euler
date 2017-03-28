@@ -5,7 +5,7 @@ import java.math.MathContext;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Problem26 {
+final class Problem26 {
 
 //	private static final int MAX = 11;
 	 private static final int MAX = 1000;

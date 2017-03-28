@@ -1,6 +1,6 @@
 package problems.problem9;
 
-public class Problem9 {
+final class Problem9 {
 
 	private static final int SUM = 1000;
 	

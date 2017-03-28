@@ -6,7 +6,7 @@ import java.util.List;
 
 import util.FileUtil;
 
-public class Problem22 {
+final class Problem22 {
 
 	public static void main(String[] args) throws FileNotFoundException {
 		List<String> names = FileUtil.readLines("problems/problem22/p022_names.txt");

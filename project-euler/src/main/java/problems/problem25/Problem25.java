@@ -4,7 +4,7 @@ import java.math.BigInteger;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Problem25 {
+final class Problem25 {
 	
 //	private static final int MAX = 3;
 	private static final int MAX = 1000;

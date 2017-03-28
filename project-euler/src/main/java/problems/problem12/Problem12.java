@@ -1,6 +1,6 @@
 package problems.problem12;
 
-public class Problem12 {
+final class Problem12 {
 
 //	private static final int MIN_FACTORS = 5;
 	private static final int MIN_FACTORS = 500;

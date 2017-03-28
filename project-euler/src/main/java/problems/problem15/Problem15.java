@@ -1,6 +1,6 @@
 package problems.problem15;
 
-public class Problem15 {
+final class Problem15 {
 
 	private static final int ROWS = 20;
 	private static final int COLS = 20;

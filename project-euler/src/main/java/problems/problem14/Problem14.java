@@ -1,6 +1,6 @@
 package problems.problem14;
 
-public class Problem14 {
+final class Problem14 {
 
 	private static final int MAX = 1000000;
 	private static final long[] chains = new long[MAX];

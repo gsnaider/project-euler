@@ -7,7 +7,7 @@ import java.util.Map;
 
 import util.BinaryTreeNode;
 
-public class Problem18 {
+final class Problem18 {
 	
 //	private static final int[][] nums =
 //		  {{3},
