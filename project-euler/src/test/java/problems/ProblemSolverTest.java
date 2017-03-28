@@ -1,7 +1,8 @@
 package problems;
 
+import static com.google.common.truth.Truth.assertThat;
+
 import org.junit.Test;
-import static org.junit.Assert.assertEquals;
 
 public abstract class ProblemSolverTest {
 
@@ -9,9 +10,8 @@ public abstract class ProblemSolverTest {
 	protected abstract ProblemSolver solver();
 	
 	@Test
-	public void solveTest() {
-		assertEquals(expectedAnswer(), solver().solve());
+	public void testSolve() {
+		assertThat(solver().solve()).isEqualTo(expectedAnswer());
 	}
-	
 	
 }
