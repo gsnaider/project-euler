@@ -8,8 +8,6 @@ import problems.ProblemSolver;
 public final class Problem23Solver implements ProblemSolver {
 
 	private static final int MAX = 28123;
-	// private static final int[] abundantNumbers = new int[MAX];
-
 	private static final Set<Integer> abundantNumbers = new HashSet<>();
 
 	@Override
