@@ -9,17 +9,17 @@ public final class Problem23Solver implements ProblemSolver {
 	
 	@Override
 	public String solve() {
-		long abundantSum = 0;
+		long notAbundantSum = 0;
 		int idx = 0;
 		for (int i = 1; i <= MAX; i++) {
 			if (isAbundant(i)) {
 				abundantNumbers[idx++] = i;
 			}
 			if (!isSumOfAbundant(i)) {
-				abundantSum += i;
+				notAbundantSum += i;
 			}
 		}
-		return String.valueOf(abundantSum);
+		return String.valueOf(notAbundantSum);
 	}
 
 	private static boolean isSumOfAbundant(int n) {
@@ -28,7 +28,7 @@ public final class Problem23Solver implements ProblemSolver {
 				break;
 			}
 			for (int b : abundantNumbers) {
-				if (b > a) {
+				if (b > a || b > (n - a)) {
 					break;
 				}
 				if (a + b == n) {
