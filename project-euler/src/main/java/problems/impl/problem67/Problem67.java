@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 
-import data.BinaryTreeNode;
+import common.collect.BinaryTreeNode;
 
 final class Problem67 {
 

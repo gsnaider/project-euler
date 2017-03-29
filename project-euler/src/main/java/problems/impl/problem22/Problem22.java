@@ -4,7 +4,7 @@ import java.io.FileNotFoundException;
 import java.util.Collections;
 import java.util.List;
 
-import util.FileUtil;
+import common.util.FileUtil;
 
 final class Problem22 {
 

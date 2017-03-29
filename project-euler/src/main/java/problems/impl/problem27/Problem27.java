@@ -1,6 +1,6 @@
 package problems.impl.problem27;
 
-import util.PrimeUtil;
+import common.util.PrimeUtil;
 
 final class Problem27 {
 

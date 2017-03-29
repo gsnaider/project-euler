@@ -1,4 +1,4 @@
-package data;
+package common.collect;
 
 public final class BinaryTreeNode<T> {
 
