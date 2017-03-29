@@ -4,14 +4,17 @@ import java.math.BigInteger;
 import java.util.HashMap;
 import java.util.Map;
 
-final class Problem25 {
+import problems.ProblemSolver;
+
+public final class Problem25Solver implements ProblemSolver {
 	
 //	private static final int MAX = 3;
 	private static final int MAX = 1000;
 
 	private static final Map<Long, BigInteger> fibonacci = new HashMap<>();
 
-	public static void main(String[] args) {
+	@Override
+	public String solve() {
 		
 		fibonacci.put(1L, BigInteger.ONE);
 		fibonacci.put(2L, BigInteger.ONE);
@@ -20,7 +23,7 @@ final class Problem25 {
 		while (fibonacci(i).toString().length() < MAX) {
 			i++;
 		}
-		System.out.println(i);
+		return String.valueOf(i);
 		
 	}
 

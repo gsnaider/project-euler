@@ -4,11 +4,14 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
-final class Problem24 {
+import problems.ProblemSolver;
+
+public final class Problem24Solver implements ProblemSolver {
 
 	private static final int MILLION = 1000000;
 
-	public static void main(String[] args) {
+	@Override
+	public String solve() {
 		String millionthPerm = "";
 
 		int startingPos = 0;
@@ -45,7 +48,7 @@ final class Problem24 {
 			startingPos = startingPos + bucketSize * bucket;
 		}
 
-		System.out.println(millionthPerm);
+		return String.valueOf(millionthPerm);
 	}
 
 }

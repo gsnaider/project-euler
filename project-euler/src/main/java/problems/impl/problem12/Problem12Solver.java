@@ -1,13 +1,16 @@
 package problems.impl.problem12;
 
-final class Problem12 {
+import problems.ProblemSolver;
+
+public final class Problem12Solver implements ProblemSolver {
 
 //	private static final int MIN_FACTORS = 5;
 	private static final int MIN_FACTORS = 500;
 	
 	
 	
-	public static void main(String[] args) {
+	@Override
+	public String solve() {
 
 		long triangle = 0;
 		long i = 1;
@@ -16,7 +19,7 @@ final class Problem12 {
 			triangle += i++;
 		}
 		
-		System.out.println(triangle);
+		return String.valueOf(triangle);
 		
 	}
 

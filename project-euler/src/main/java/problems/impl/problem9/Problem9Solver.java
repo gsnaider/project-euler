@@ -1,21 +1,25 @@
 package problems.impl.problem9;
 
-final class Problem9 {
+import exception.NoSolutionFoundException;
+import problems.ProblemSolver;
+
+public final class Problem9Solver implements ProblemSolver {
 
 	private static final int SUM = 1000;
 	
-	public static void main(String[] args) {
+	@Override
+	public String solve() throws NoSolutionFoundException {
 		
 		for (int a = 1; a < SUM - 3; a++) {
 			for (int b = a + 1; b < SUM - 2; b++) {
 				for (int c = b + 1; c < SUM - 1; c++) {
 					if (isPythagoreanTriplet(a,b,c) && (a + b + c == SUM)) {
-						System.out.println(a*b*c);
-						break;
+						return String.valueOf(a*b*c);
 					}
 				}
 			}
 		}
+		throw new NoSolutionFoundException();
 
 	}
 

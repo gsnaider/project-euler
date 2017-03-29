@@ -5,10 +5,12 @@ import java.util.Collections;
 import java.util.List;
 
 import common.util.FileUtil;
+import problems.ProblemSolver;
 
-final class Problem22 {
+public final class Problem22Solver implements ProblemSolver {
 
-	public static void main(String[] args) throws FileNotFoundException {
+	@Override
+	public String solve() throws FileNotFoundException {
 		List<String> names = FileUtil.readLines("problems/problem22/p022_names.txt");
 		Collections.sort(names);
 		long scoresSum = 0;
@@ -17,7 +19,7 @@ final class Problem22 {
 			scoresSum += calculateScore(name, pos);
 			pos++;
 		}
-		System.out.println(scoresSum);
+		return String.valueOf(scoresSum);
 	}
 
 	private static long calculateScore(String name, int pos) {

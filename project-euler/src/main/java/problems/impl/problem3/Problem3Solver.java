@@ -3,6 +3,8 @@ package problems.impl.problem3;
 import java.util.ArrayList;
 import java.util.List;
 
+
+
 import problems.ProblemSolver;
 
 public final class Problem3Solver implements ProblemSolver {

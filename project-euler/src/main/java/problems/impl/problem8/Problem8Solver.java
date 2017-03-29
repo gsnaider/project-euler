@@ -6,7 +6,9 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
-final class Problem8 {
+import problems.ProblemSolver;
+
+public final class Problem8Solver implements ProblemSolver {
 
 //	private static final int ADY = 4;
 	private static final int ADY = 13;
@@ -14,7 +16,8 @@ final class Problem8 {
 	private static final int NUMS = 1000;
 	
 	
-	public static void main(String[] args) {
+	@Override
+	public String solve() {
 
 		final List<Integer> nums = new ArrayList<>();
 
@@ -62,7 +65,7 @@ final class Problem8 {
 				maxProd = prod;
 			}
 		}
-		System.out.println(maxProd);
+		return String.valueOf(maxProd);
 	}
 
 	private static long prod(Queue<Integer> adyacents) {

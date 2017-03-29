@@ -2,15 +2,18 @@ package problems.impl.problem10;
 
 import common.util.PrimeUtil;
 
-final class Problem10 {
+import problems.ProblemSolver;
 
-//	private static final int MAX = 10;
+public final class Problem10Solver implements ProblemSolver {
+
+	// private static final int MAX = 10;
 	private static final int MAX = 2000000;
-	
-	public static void main(String[] args) {
-		
+
+	@Override
+	public String solve() {
+
 		long sum = 2;
-		
+
 		long i = 3;
 		while (i < MAX) {
 			if (PrimeUtil.isPrime(i)) {
@@ -18,6 +21,6 @@ final class Problem10 {
 			}
 			i += 2;
 		}
-		System.out.println(sum);
+		return String.valueOf(sum);
 	}
 }

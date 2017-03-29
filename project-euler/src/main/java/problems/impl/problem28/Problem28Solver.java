@@ -1,13 +1,16 @@
 package problems.impl.problem28;
 
-final class Problem28 {
+import problems.ProblemSolver;
+
+public final class Problem28Solver implements ProblemSolver {
 
 	private static final int SIZE = 5;
 //	private static final int SIZE = 1001;
 	
 	private static final int[][] mat = new int[SIZE][SIZE];
 
-	public static void main(String[] args) {
+	@Override
+	public String solve() {
 		
 		int row = SIZE / 2;
 		int col = SIZE / 2;
@@ -20,6 +23,7 @@ final class Problem28 {
 			mat[row][col] = i;
 			
 		}
+		return null;
 		
 	}
 

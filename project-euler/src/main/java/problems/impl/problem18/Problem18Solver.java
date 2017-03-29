@@ -7,7 +7,9 @@ import java.util.Map;
 
 import common.collect.BinaryTreeNode;
 
-final class Problem18 {
+import problems.ProblemSolver;
+
+public final class Problem18Solver implements ProblemSolver {
 	
 //	private static final int[][] nums =
 //		  {{3},
@@ -34,7 +36,8 @@ final class Problem18 {
 	
 	private static final Map<BinaryTreeNode<Integer>, Long> maxPaths = new HashMap<>();
 	
-	public static void main(String[] args) {
+	@Override
+	public String solve() {
 	
 		List<BinaryTreeNode<Integer>> previousRow = null;
 		for (int row = nums.length - 1; row >= 0; row--) {
@@ -53,7 +56,7 @@ final class Problem18 {
 		
 		BinaryTreeNode<Integer> root = previousRow.get(0);
 		
-		System.out.println(maxPath(root));
+		return String.valueOf(maxPath(root));
 		
 	}
 

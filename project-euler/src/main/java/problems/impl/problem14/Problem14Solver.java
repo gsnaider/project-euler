@@ -1,11 +1,14 @@
 package problems.impl.problem14;
 
-final class Problem14 {
+import problems.ProblemSolver;
+
+public final class Problem14Solver implements ProblemSolver {
 
 	private static final int MAX = 1000000;
 	private static final long[] chains = new long[MAX];
 	
-	public static void main(String[] args) {
+	@Override
+	public String solve() {
 
 		long maxChain = 0;
 		int maxCollatzNum = 0;
@@ -18,9 +21,7 @@ final class Problem14 {
 			}
 		}
 
-		System.out.println(maxCollatzNum);
-		System.out.println(maxChain);
-		
+		return String.valueOf(maxCollatzNum);
 	}
 
 	private static long collatz(long n) {

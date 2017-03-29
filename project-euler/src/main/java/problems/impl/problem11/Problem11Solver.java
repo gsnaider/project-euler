@@ -3,9 +3,12 @@ package problems.impl.problem11;
 import problems.impl.problem11.util.DirectionValidator;
 import problems.impl.problem11.util.ProductCalculator;
 
-final class Problem11 {
+import problems.ProblemSolver;
 
-	public static void main(String[] args) {
+public final class Problem11Solver implements ProblemSolver {
+
+	@Override
+	public String solve() {
 
 		final int[][] matrix = {
 				{ 8, 02, 22, 97, 38, 15, 00, 40, 00, 75, 04, 05, 07, 78, 52, 12, 50, 77, 91, 8 },
@@ -77,7 +80,7 @@ final class Problem11 {
 			}
 		}
 		
-		System.out.println(maxProd);
+		return String.valueOf(maxProd);
 
 	}
 

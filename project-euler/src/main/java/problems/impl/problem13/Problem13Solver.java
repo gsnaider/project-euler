@@ -5,9 +5,12 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
-final class Problem13 {
+import problems.ProblemSolver;
 
-	public static void main(String[] args) {
+public final class Problem13Solver implements ProblemSolver {
+
+	@Override
+	public String solve() {
 		final Set<BigInteger> nums = new HashSet<>();
 
 		Collections.addAll(
@@ -117,7 +120,7 @@ final class Problem13 {
 		for (BigInteger num : nums) {
 			sum = sum.add(num);
 		}
-		System.out.println(sum);
+		return String.valueOf(sum);
 		
 	}
 

@@ -1,11 +1,14 @@
 package problems.impl.problem23;
 
-final class Problem23 {
+import problems.ProblemSolver;
+
+public final class Problem23Solver implements ProblemSolver {
 
 	private static final int MAX = 28123;
 	private static final int[] abundantNumbers = new int[MAX];
 	
-	public static void main(String[] args) {
+	@Override
+	public String solve() {
 		long abundantSum = 0;
 		int idx = 0;
 		for (int i = 1; i <= MAX; i++) {
@@ -16,7 +19,7 @@ final class Problem23 {
 				abundantSum += i;
 			}
 		}
-		System.out.println(abundantSum);
+		return String.valueOf(abundantSum);
 	}
 
 	private static boolean isSumOfAbundant(int n) {

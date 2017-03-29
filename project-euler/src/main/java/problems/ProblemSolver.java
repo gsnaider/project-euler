@@ -2,6 +2,6 @@ package problems;
 
 public interface ProblemSolver {
 
-	public String solve();
+	public String solve() throws Exception;
 	
 }

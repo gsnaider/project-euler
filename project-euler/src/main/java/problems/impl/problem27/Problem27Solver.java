@@ -2,7 +2,9 @@ package problems.impl.problem27;
 
 import common.util.PrimeUtil;
 
-final class Problem27 {
+import problems.ProblemSolver;
+
+public final class Problem27Solver implements ProblemSolver {
 
 	
 //	private static final int MAX_A = 0;
@@ -15,7 +17,8 @@ final class Problem27 {
 	private static final int MAX_B = 1000;
 	private static final int MIN_B = -1000;
 	
-	public static void main(String[] args) {
+	@Override
+	public String solve() {
 
 		long maxPrimes = 0;
 		long product = 0;
@@ -41,7 +44,7 @@ final class Problem27 {
 			}
 		}
 		
-		System.out.println(product);
+		return String.valueOf(product);
 
 	}
 

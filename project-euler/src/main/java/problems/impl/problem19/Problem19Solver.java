@@ -4,12 +4,15 @@ import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.Month;
 
-final class Problem19 {
+import problems.ProblemSolver;
+
+public final class Problem19Solver implements ProblemSolver {
 
 	private static final int FIRST_YEAR = 1901;
 	private static final int LAST_YEAR = 2000;
 
-	public static void main(String[] args) {
+	@Override
+	public String solve() {
 
 		long sundays = 0;
 		for (int year = FIRST_YEAR; year <= LAST_YEAR; year++) {
@@ -20,7 +23,7 @@ final class Problem19 {
 				}
 			}
 		}
-		System.out.println(sundays);
+		return String.valueOf(sundays);
 
 	}
 

@@ -1,11 +1,11 @@
 package problems;
 
-import problems.impl.problem1.Problem1Solver;
+import problems.impl.problem9.Problem9Solver;
 
 public class Main {
 
-	public static void main(String[] args) {
-		ProblemSolver problemSolver = new Problem1Solver();
+	public static void main(String[] args) throws Exception {
+		ProblemSolver problemSolver = new Problem9Solver();
 		System.out.println(problemSolver.solve());
 	}
 

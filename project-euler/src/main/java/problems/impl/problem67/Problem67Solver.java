@@ -10,11 +10,14 @@ import java.util.Scanner;
 
 import common.collect.BinaryTreeNode;
 
-final class Problem67 {
+import problems.ProblemSolver;
+
+public final class Problem67Solver implements ProblemSolver {
 
 	private static final Map<BinaryTreeNode<Integer>, Long> maxPaths = new HashMap<>();
 
-	public static void main(String[] args) {
+	@Override
+	public String solve() {
 
 		List<List<Integer>> numbers = new ArrayList<>();
 		loadData(numbers);
@@ -36,13 +39,13 @@ final class Problem67 {
 
 		BinaryTreeNode<Integer> root = previousRow.get(0);
 
-		System.out.println(maxPath(root));
+		return String.valueOf(maxPath(root));
 
 	}
 
 	private static void loadData(List<List<Integer>> numbers) {
 		File file = new File(
-				Problem67
+				Problem67Solver
 				.class
 				.getClassLoader()
 				.getResource("problems/problem67/p067_triangle.txt")

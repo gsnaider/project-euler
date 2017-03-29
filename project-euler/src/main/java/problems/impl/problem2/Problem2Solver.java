@@ -1,5 +1,7 @@
 package problems.impl.problem2;
 
+
+
 import problems.ProblemSolver;
 
 public final class Problem2Solver implements ProblemSolver {

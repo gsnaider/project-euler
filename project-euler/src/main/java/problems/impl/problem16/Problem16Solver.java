@@ -2,12 +2,15 @@ package problems.impl.problem16;
 
 import java.math.BigInteger;
 
-final class Problem16 {
+import problems.ProblemSolver;
+
+public final class Problem16Solver implements ProblemSolver {
 
 //	private static final int EXP = 15;
 	private static final int EXP = 1000;
 	
-	public static void main(String[] args) {
+	@Override
+	public String solve() {
 		
 		BigInteger two = new BigInteger("2");
 		String result = two.pow(EXP).toString();
@@ -17,7 +20,7 @@ final class Problem16 {
 			int digit = Character.digit(result.charAt(i), 10);
 			sum += digit;
 		}
-		System.out.println(sum);
+		return String.valueOf(sum);
 	}
 
 }

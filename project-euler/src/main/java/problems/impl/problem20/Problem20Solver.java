@@ -2,13 +2,16 @@ package problems.impl.problem20;
 
 import java.math.BigInteger;
 
-final class Problem20 {
+import problems.ProblemSolver;
+
+public final class Problem20Solver implements ProblemSolver {
 
 //	private static final int MAX = 10;
 	private static final int MAX = 100;
 	
 	
-	public static void main(String[] args) {
+	@Override
+	public String solve() {
 
 		BigInteger fact = BigInteger.ONE;
 		for (int i = 1; i <= MAX; i++) {
@@ -20,7 +23,7 @@ final class Problem20 {
 			int digit = Character.digit(digits.charAt(i), 10);
 			sum += digit;
 		}
-		System.out.println(sum);
+		return String.valueOf(sum);
 		
 	}
 	

@@ -1,10 +1,13 @@
 package problems.impl.problem21;
 
-final class Problem21 {
+import problems.ProblemSolver;
+
+public final class Problem21Solver implements ProblemSolver {
 
 	private static final int MAX = 10000;
 	
-	public static void main(String[] args) {
+	@Override
+	public String solve() {
 		
 		
 		final long[] divisorsSum = new long[MAX];
@@ -17,7 +20,7 @@ final class Problem21 {
 				amicableNumbersSum += i + sum;
 			}
 		}
-		System.out.println(amicableNumbersSum);
+		return String.valueOf(amicableNumbersSum);
 
 	}
 
