@@ -12,10 +12,16 @@ public class PrimeUtil {
 	 * @param n
 	 *            The index of the prime number to look for. Must be equal or
 	 *            greater than 1.
+	 * 
+	 * @throws IllegalArgumentException
+	 *             if {@code n} is less than 1.
 	 */
 	public static long findPrime(int n) {
 		if (n < 1) {
 			throw new IllegalArgumentException();
+		}
+		if (n == 1) {
+			return 2;
 		}
 
 		int count = 1;
@@ -30,33 +36,27 @@ public class PrimeUtil {
 	}
 
 	/**
-	 * Returns the list of primes that are strictly less than {@code n}.
+	 * Returns true if {@code n} is a prime number. A prime number is a natural
+	 * number greater than 1 that has no positive divisors other than 1 and
+	 * itself.
+	 * 
+	 * @param n
+	 *            The number to be checked if it's prime. Must be equal or
+	 *            greater than 0.
+	 * 
+	 * @throws IllegalArgumentException
+	 *             if {@code n} is less than 0.
 	 */
-	public static List<Long> getPrimesBelow(int n) {
-		List<Long> primes = new ArrayList<>();
-		if (n <= 2) {
-			return primes;
-		}
-		
-		long i = 3;
-		while (i < n) {
-			if (isPrime(i)) {
-				primes.add(i);
-			}
-			i += 2;
-		}
-		
-		return primes;
-		
-	}
-
-	public static boolean isPrime(long num) {
-		if (num < 0) {
+	public static boolean isPrime(long n) {
+		if (n < 0) {
 			throw new IllegalArgumentException();
 		}
-		final long sqrt = Math.round(Math.sqrt(num));
+		if (n < 2) {
+			return false;
+		}
+		final long sqrt = Math.round(Math.sqrt(n));
 		for (int i = 2; i <= sqrt; i++) {
-			if (num % i == 0) {
+			if (n % i == 0) {
 				return false;
 			}
 		}
