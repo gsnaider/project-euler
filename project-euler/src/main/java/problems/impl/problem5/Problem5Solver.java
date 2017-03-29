@@ -1,18 +1,19 @@
 package problems.impl.problem5;
 
-final class Problem5 {
+import problems.ProblemSolver;
+
+public final class Problem5Solver implements ProblemSolver {
 
 	// private static final int MAX = 10;
 	private static final int MAX = 20;
 
-	public static void main(String[] args) {
-
+	@Override
+	public String solve() {
 		int i = 2;
 		while (!evenlyDivisible(i)) {
 			i += 2;
 		}
-		System.out.println(i);
-
+		return String.valueOf(i);
 	}
 
 	private static boolean evenlyDivisible(int num) {
@@ -23,5 +24,4 @@ final class Problem5 {
 		}
 		return true;
 	}
-
 }
