@@ -5,7 +5,7 @@ import problems.ProblemSolverTest;
 
 public final class Problem10SolverTest extends ProblemSolverTest {
 
-	private static final String ANSWER = "233168";
+	private static final String ANSWER = "142913828922";
 	
 	@Override
 	protected String expectedAnswer() {

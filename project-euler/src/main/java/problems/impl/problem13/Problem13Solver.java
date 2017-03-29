@@ -120,7 +120,7 @@ public final class Problem13Solver implements ProblemSolver {
 		for (BigInteger num : nums) {
 			sum = sum.add(num);
 		}
-		return String.valueOf(sum);
+		return String.valueOf(sum).substring(0, 10);
 		
 	}
 
