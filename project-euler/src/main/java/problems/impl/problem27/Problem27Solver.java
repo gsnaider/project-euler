@@ -22,8 +22,6 @@ public final class Problem27Solver implements ProblemSolver {
 
 		long maxPrimes = 0;
 		long product = 0;
-		int bestA = 0;
-		int bestB = 0;
 		
 		
 		for (int a = MIN_A; a <= MAX_A; a++) {
@@ -38,8 +36,6 @@ public final class Problem27Solver implements ProblemSolver {
 				if (primes >= maxPrimes) {
 					maxPrimes = primes;
 					product = a*b;
-					bestA = a;
-					bestB = b;
 				}
 			}
 		}
