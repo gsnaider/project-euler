@@ -10,7 +10,7 @@ public abstract class ProblemSolverTest {
 	protected abstract ProblemSolver solver();
 	
 	@Test
-	public void testSolve() {
+	public void testSolve() throws Exception {
 		assertThat(solver().solve()).isEqualTo(expectedAnswer());
 	}
 	
