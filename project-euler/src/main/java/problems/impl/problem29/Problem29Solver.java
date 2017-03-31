@@ -1,6 +1,6 @@
 package problems.impl.problem29;
 
-import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -13,10 +13,10 @@ public class Problem29Solver implements ProblemSolver {
 
 	@Override
 	public String solve() {
-		final Set<BigDecimal> results = new HashSet<>();
+		final Set<BigInteger> results = new HashSet<>();
 		for (int a = 2; a <= MAX; a++) {
 			for (int b = 2; b <= MAX; b++) {
-				results.add(BigDecimal.valueOf(a).pow(b));
+				results.add(BigInteger.valueOf(a).pow(b));
 			}
 		}
 		return String.valueOf(results.size());
