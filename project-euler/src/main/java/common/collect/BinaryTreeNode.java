@@ -2,7 +2,7 @@ package common.collect;
 
 public final class BinaryTreeNode<T> {
 
-	private  final T value;
+	private final T value;
 	private final BinaryTreeNode<T> left;
 	private final BinaryTreeNode<T> right;
 	

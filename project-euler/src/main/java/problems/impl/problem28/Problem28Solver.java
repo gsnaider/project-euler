@@ -16,7 +16,7 @@ public final class Problem28Solver implements ProblemSolver {
 		return String.valueOf(sum);
 	}
 
-	private long sumDiaonals() {
+	private static long sumDiaonals() {
 		long sum = 0;
 		for (int i = 0; i < SIZE; i++) {
 			sum += mat[i][i];
@@ -27,7 +27,7 @@ public final class Problem28Solver implements ProblemSolver {
 		return sum;
 	}
 
-	private void fillMatrix() {
+	private static void fillMatrix() {
 		int row = SIZE / 2;
 		int col = SIZE / 2;
 		int num = 1;
