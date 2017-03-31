@@ -1,5 +1,5 @@
 package problems.impl.problem28;
 
-public enum Movement {
+enum Movement {
 	HORIZONTAL, VERTICAL;
 }
