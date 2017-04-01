@@ -5,7 +5,7 @@ import problems.ProblemSolver;
 public class Problem31Solver implements ProblemSolver {
 
 	private static final int[] coins = { 200, 100, 50, 20, 10, 5, 2, 1 };
-	private static final int MONEY = 1000;
+	private static final int MONEY = 200;
 	private static final int[][] memo = new int[coins.length][MONEY + 1];
 	
 	private static final int UNINITIALIZED = -1;
