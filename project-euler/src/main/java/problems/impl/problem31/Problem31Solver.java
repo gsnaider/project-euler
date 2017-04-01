@@ -1,46 +1,37 @@
 package problems.impl.problem31;
 
-import java.util.HashSet;
-import java.util.Set;
-
-import com.google.common.collect.ImmutableSet;
-
 import problems.ProblemSolver;
 
 public class Problem31Solver implements ProblemSolver {
 
-	// TODO: This is now returning possible combinations using only one of each coin.
+	private static final int[] coins = { 200, 100, 50, 20, 10, 5, 2, 1 };
+	private static final int MONEY = 200;
+	private static final int[][] combinations = new int[coins.length][MONEY];
 	
 	@Override
 	public String solve() {
-		final ImmutableSet<Integer> coins = ImmutableSet.of(
-				Integer.valueOf(1),
-				Integer.valueOf(2),
-				Integer.valueOf(5),
-				Integer.valueOf(10),
-				Integer.valueOf(20),
-				Integer.valueOf(50),
-				Integer.valueOf(100),
-				Integer.valueOf(200));
-		int combinations = makeChange(coins, 200);
+		int combinations = makeChange(0, 6);
 		return String.valueOf(combinations);
 	}
 
-	private int makeChange(Set<Integer> coins, int money) {
-		if (coins.size() == 1) {
-			return coins.iterator().next().equals(money) ? 1 : 0;
+	private int makeChange(int maxCoinIdx,int money) {
+		if (maxCoinIdx == coins.length - 1) {
+			// Only one possible combination using only 1p coins.
+			return 1;
 		}
 		int combinations = 0;
-		for (Integer coin : coins) {
-			Set<Integer> newCoins = new HashSet<>(coins);
-			newCoins.remove(coin);
-			// Calculate combinations of remaining coins when taking and not taking the coin.
-			combinations += makeChange(newCoins, money);
-			combinations += makeChange(newCoins, money - coin);
+		int coin = coins[maxCoinIdx];
+		
+		// Calculate combinations without using this coin.
+		combinations += makeChange(maxCoinIdx + 1, money);
+		
+		// Calculate combinations using this coin as many times as possible.
+		while (money >= coin) {
+			money -= coin;
+			combinations += makeChange(maxCoinIdx, money);
 		}
+		
 		return combinations;
 	}
-	
-	
 
 }
