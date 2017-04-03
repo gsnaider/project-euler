@@ -1,5 +1,6 @@
 package problems.impl.problem33;
 
+import common.util.NumberUtil;
 import problems.ProblemSolver;
 
 public class Problem33Solver implements ProblemSolver {
@@ -9,7 +10,9 @@ public class Problem33Solver implements ProblemSolver {
 
 	@Override
 	public String solve() {
+
 		int denominatorProduct = 1;
+		int numeratorProduct = 1;
 		for (int numerator = MIN; numerator < MAX; numerator++) {
 			for (int denominator = numerator + 1; denominator <= MAX; denominator++) {
 				// It is enough to search for just one common digit. If they had
@@ -22,39 +25,68 @@ public class Problem33Solver implements ProblemSolver {
 					continue;
 				}
 				double fraction = (double) numerator / denominator;
-				double oneDigitFraction = 
-						(double) removeDigit(numerator, commonDigit)
+				double oneDigitFraction = (double) removeDigit(numerator, commonDigit)
 						/ removeDigit(denominator, commonDigit);
 				if (fraction == oneDigitFraction) {
-					denominatorProduct = updateDenominatorProduct(numerator, denominator, denominatorProduct);
+					numeratorProduct *= numerator;
+					denominatorProduct *= denominator;
 				}
 			}
 		}
-
-		return String.valueOf(denominatorProduct);
+		
+		int gcd = NumberUtil.gcd(numeratorProduct, denominatorProduct);
+		return String.valueOf(denominatorProduct / gcd);
 	}
 
-	private static int updateDenominatorProduct(int numerator, int denominator, int denominatorProduct) {
-		int lowestDenominator = findLowestDenominator(numerator, denominator);
-		return denominatorProduct * lowestDenominator;
-	}
-
-	private static int findLowestDenominator(int numerator, int denominator) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
+	/**
+	 * Returns the digit of {@code num} that is not equal to {@code digit}
+	 * 
+	 * @param num
+	 *            A positive two digit number.
+	 * @param digit
+	 *            The digit to remove from {@code num}. Must be a digit present
+	 *            in {@code num}.
+	 */
 	private static int removeDigit(int num, int digit) {
-		// TODO Auto-generated method stub
-		return 0;
+		int firstDigit = num / 10;
+		if (firstDigit == digit) {
+			return num % 10;
+		} else {
+			return firstDigit;
+		}
 	}
 
 	/**
 	 * Returns the common digit between {@code a} and {@code b}, or {@code -1}
 	 * if they don't have a common digit or have more than one common digit.
+	 * 
+	 * @param a
+	 *            A positive two digit number.
+	 * @param b
+	 *            A positive two digit number.
+	 * 
 	 */
 	private static int findCommonDigit(int a, int b) {
-		// TODO Auto-generated method stub
-		return 0;
+
+		int[] aDigits = { a / 10, a % 10 };
+		int[] bDigits = { b / 10, b % 10 };
+
+		int commonDigitsCount = 0;
+		int commonDigit = -1;
+		for (int aDigit : aDigits) {
+			for (int bDigit : bDigits) {
+				if (aDigit == bDigit) {
+					commonDigit = aDigit;
+					commonDigitsCount++;
+				}
+			}
+		}
+
+		if (commonDigitsCount == 1) {
+			return commonDigit;
+		} else {
+			return -1;
+		}
+
 	}
 }
