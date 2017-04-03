@@ -1,11 +1,11 @@
 package problems;
 
-import problems.impl.problem32.Problem32Solver;
+import problems.impl.problem33.Problem33Solver;
 
 public class Main {
 
 	public static void main(String[] args) throws Exception {
-		ProblemSolver problemSolver = new Problem32Solver();
+		ProblemSolver problemSolver = new Problem33Solver();
 		System.out.println(problemSolver.solve());
 	}
 
