@@ -54,8 +54,18 @@ public class PrimeUtil {
 		if (n < 2) {
 			return false;
 		}
+		
+		// Special case for 2.
+		if (n == 2) {
+			return true;
+		} else if (n % 2 == 0) {
+			return false;
+		}
+
 		final long sqrt = Math.round(Math.sqrt(n));
-		for (int i = 2; i <= sqrt; i++) {
+		
+		// Only check odd numbers up until square root.
+		for (int i = 3; i <= sqrt; i += 2) {
 			if (n % i == 0) {
 				return false;
 			}
