@@ -25,4 +25,18 @@ public final class NumberUtil {
 		return gcd;
 	}
 	
+	public static long factorial(long n) {
+		if (n < 0) {
+			throw new IllegalArgumentException();
+		}
+		if (n < 2) {
+			return 1;
+		}
+		long factorial = 1;
+		for (int i = 2; i <= n; i++) {
+			factorial *= i;
+		}
+		return factorial;
+	}
+	
 }

@@ -33,4 +33,21 @@ public class NumberUtilTest {
 		assertThat(NumberUtil.gcd(18, 24)).isEqualTo(6);
 	}
 	
+	@Test
+	public void testFactorial() {
+		assertThat(NumberUtil.factorial(0)).isEqualTo(1L);
+		assertThat(NumberUtil.factorial(1)).isEqualTo(1L);
+		assertThat(NumberUtil.factorial(2)).isEqualTo(2L);
+		assertThat(NumberUtil.factorial(3)).isEqualTo(6L);
+		assertThat(NumberUtil.factorial(4)).isEqualTo(24L);
+		assertThat(NumberUtil.factorial(5)).isEqualTo(120L);
+		assertThat(NumberUtil.factorial(6)).isEqualTo(720L);
+		assertThat(NumberUtil.factorial(7)).isEqualTo(5040L);
+		assertThat(NumberUtil.factorial(8)).isEqualTo(40320L);
+		assertThat(NumberUtil.factorial(9)).isEqualTo(362880L);
+		assertThat(NumberUtil.factorial(10)).isEqualTo(3628800L);
+		assertThat(NumberUtil.factorial(15)).isEqualTo(1307674368000L);
+		assertThat(NumberUtil.factorial(20)).isEqualTo(2432902008176640000L);
+	}
+	
 }
