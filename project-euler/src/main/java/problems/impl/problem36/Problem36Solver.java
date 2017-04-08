@@ -1,5 +1,6 @@
 package problems.impl.problem36;
 
+import common.util.StringUtil;
 import problems.ProblemSolver;
 
 public class Problem36Solver implements ProblemSolver {
@@ -19,16 +20,12 @@ public class Problem36Solver implements ProblemSolver {
 
 	private boolean isPalindromicBaseTwo(int num) {
 		String number = String.valueOf(num);
-		return isPalindrome(number);
+		return StringUtil.isPalindrome(number);
 	}
 
 	private boolean isPalindromicBaseTen(int num) {
 		String binary = Integer.toBinaryString(num);
-		return isPalindrome(binary);
+		return StringUtil.isPalindrome(binary);
 	}
 
-	private static boolean isPalindrome(String s) {
-		return s.equals(new StringBuilder(s).reverse().toString());
-	}
-	
 }
