@@ -18,12 +18,12 @@ public class Problem36Solver implements ProblemSolver {
 		return String.valueOf(palindromicSum);
 	}
 
-	private boolean isPalindromicBaseTwo(int num) {
+	private static boolean isPalindromicBaseTwo(int num) {
 		String number = String.valueOf(num);
 		return StringUtil.isPalindrome(number);
 	}
 
-	private boolean isPalindromicBaseTen(int num) {
+	private static boolean isPalindromicBaseTen(int num) {
 		String binary = Integer.toBinaryString(num);
 		return StringUtil.isPalindrome(binary);
 	}
