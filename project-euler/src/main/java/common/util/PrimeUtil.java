@@ -52,7 +52,7 @@ public class PrimeUtil {
 			return false;
 		}
 		
-		// Special case for 2.
+		// Special case for 2 and even numbers.
 		if (n == 2) {
 			return true;
 		} else if (n % 2 == 0) {
