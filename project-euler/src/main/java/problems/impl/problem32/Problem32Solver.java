@@ -7,13 +7,13 @@ import problems.ProblemSolver;
 
 public class Problem32Solver implements ProblemSolver {
 
-	// If any of the factors has 5 or more digits, the total number of digits of
-	// the factors would be 6 or more.
-	// The lowest product of two numbers whose digits count is 6 or more, gives
-	// as a
-	// 5 digit number. So the total number of digits between the factors and the
-	// product would be 11 digits in total, and that cannot be a pandigital
-	// product.
+	/*
+	 * If any of the factors has 5 or more digits, the total number of digits of
+	 * the factors would be 6 or more. The lowest product of two numbers whose
+	 * digits count is 6 or more, gives as a 5 digit number. So the total number
+	 * of digits between the factors and the product would be 11 digits in
+	 * total, and that cannot be a pandigital product.
+	 */
 	private static final int MAX_FACTOR = 9999;
 	private static final int MAX_FACTORS_DIGITS = 5;
 
@@ -42,7 +42,7 @@ public class Problem32Solver implements ProblemSolver {
 		return String.valueOf(sum);
 	}
 
-	private boolean isPanDigital(int i, int j, long res) {
+	private static boolean isPanDigital(int i, int j, long res) {
 		String digits = String.valueOf(i) + String.valueOf(j) + String.valueOf(res);
 		if (digits.length() != 9) {
 			return false;
