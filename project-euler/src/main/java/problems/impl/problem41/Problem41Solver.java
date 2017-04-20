@@ -6,7 +6,6 @@ import common.util.PrimeUtil;
 import common.util.StringUtil;
 import problems.ProblemSolver;
 
-// TODO: Try to improve.
 public class Problem41Solver implements ProblemSolver {
 
 	@Override
