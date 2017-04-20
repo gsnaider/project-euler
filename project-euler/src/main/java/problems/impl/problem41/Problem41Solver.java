@@ -1,23 +1,25 @@
 package problems.impl.problem41;
 
-import common.util.NumberUtil;
+import java.util.Set;
+
 import common.util.PrimeUtil;
+import common.util.StringUtil;
 import problems.ProblemSolver;
 
 // TODO: Try to improve.
 public class Problem41Solver implements ProblemSolver {
 
-	// The largest n-digit pandigital number.
-	private static final int MAX = 987654321;
-
 	@Override
 	public String solve() {
 		int max = 0;
-		for (int i = 1; i <= MAX; i++) {
-			String num = String.valueOf(i);
-			if (NumberUtil.isNPandigital(i, num.length())) {
-				if (PrimeUtil.isPrime(i)) {
-					max = i;
+		String digits = "";
+		for (int lastDigit = 1; lastDigit <= 9; lastDigit++) {
+			digits += lastDigit;
+			Set<String> pandigitals = StringUtil.permutations(digits);
+			for (String pandigital : pandigitals) {
+				int num = Integer.valueOf(pandigital);
+				if (num > max && PrimeUtil.isPrime(num)) {
+					max = num;
 				}
 			}
 		}

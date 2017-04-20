@@ -54,4 +54,13 @@ public class StringUtilTest {
 	public void testIsPalindromePunctuationVerified() {
 		assertThat(StringUtil.isPalindrome("wow!")).isFalse();
 	}
+
+	@Test
+	public void testPermutations() {
+		assertThat(StringUtil.permutations("")).containsExactly("");
+		assertThat(StringUtil.permutations("A")).containsExactly("A");
+		assertThat(StringUtil.permutations("AB")).containsExactly("AB", "BA");
+		assertThat(StringUtil.permutations("AAB")).containsExactly("AAB", "ABA", "BAA");
+		assertThat(StringUtil.permutations("ABC")).containsExactly("ABC", "ACB", "BAC", "BCA", "CAB", "CBA");
+	}
 }
