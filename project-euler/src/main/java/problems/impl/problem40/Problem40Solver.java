@@ -7,7 +7,7 @@ public class Problem40Solver implements ProblemSolver {
 	private static final int MAX = 1000000;
 
 	@Override
-	public String solve() throws Exception {
+	public String solve() {
 		int product = 1;
 		int currentDigit = 1;
 		int i = 1;

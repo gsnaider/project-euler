@@ -67,15 +67,14 @@ public final class NumberUtil {
 	 * @param num
 	 *            A non-negative number to be checked if it's n-pandigital.
 	 * @param n
-	 *            A positive number which specifies the digits to use for
+	 *            A number between 1 and 9 which specifies the digits to use for
 	 *            checking the pandigital condition.
 	 *            
 	 * @throws IllegalArgumentException
-	 *             if {@code num} is less than 0 or if {@code n} is less or
-	 *             equal than 0.
+	 *             if {@code num} is less than 0 or if {@code n} is not between 1 and 9.
 	 */
 	public static boolean isNPandigital(long num, int n) {
-		if (num < 0 || n <= 0) {
+		if (num < 0 || n < 1 || n > 9) {
 			throw new IllegalArgumentException();
 		}
 		String s = String.valueOf(num);
