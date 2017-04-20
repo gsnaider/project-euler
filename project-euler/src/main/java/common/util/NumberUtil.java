@@ -2,19 +2,25 @@ package common.util;
 
 public final class NumberUtil {
 
-	private NumberUtil() {}
+	private NumberUtil() {
+	}
 
 	/**
-	 * Returns the greatest common divisor (gcd) between {@code a} and {@code b}.
-	 * @param a A positive integer.
-	 * @param b A positive integer.
-	 * @throws IllegalArgumentException if either {@code a} or {@code b} are not positive.
+	 * Returns the greatest common divisor (gcd) between {@code a} and
+	 * {@code b}.
+	 * 
+	 * @param a
+	 *            A positive integer.
+	 * @param b
+	 *            A positive integer.
+	 * @throws IllegalArgumentException
+	 *             if either {@code a} or {@code b} are not positive.
 	 */
 	public static int gcd(int a, int b) {
 		if (a <= 0 || b <= 0) {
 			throw new IllegalArgumentException();
 		}
-		
+
 		int gcd = 1;
 		int min = Math.min(a, b);
 		for (int divisor = 2; divisor <= min; divisor++) {
@@ -24,7 +30,7 @@ public final class NumberUtil {
 		}
 		return gcd;
 	}
-	
+
 	public static long factorial(long n) {
 		if (n < 0) {
 			throw new IllegalArgumentException();
@@ -38,5 +44,49 @@ public final class NumberUtil {
 		}
 		return factorial;
 	}
-	
+
+	/**
+	 * Returns true if {@code num} is a pandigital number. A pandigital number
+	 * is a 9-digit number that uses all of the digits 1 to 9 exactly once.
+	 * 
+	 * @param num
+	 *            A non-negative number to be checked if it's pandigital.
+	 * 
+	 * @throws IllegalArgumentException
+	 *             if {@code num} is less than 0.
+	 */
+	public static boolean isPandigital(long num) {
+		return isNPandigital(num, 9);
+	}
+
+	/**
+	 * Returns true if {@code num} is an {@code n}-pandigital number. An
+	 * n-pandigital number is an n-digit number that uses all of the digits 1 to
+	 * n exactly once.
+	 * 
+	 * @param num
+	 *            A non-negative number to be checked if it's n-pandigital.
+	 * @param n
+	 *            A positive number which specifies the digits to use for
+	 *            checking the pandigital condition.
+	 *            
+	 * @throws IllegalArgumentException
+	 *             if {@code num} is less than 0 or if {@code n} is less or
+	 *             equal than 0.
+	 */
+	public static boolean isNPandigital(long num, int n) {
+		if (num < 0 || n <= 0) {
+			throw new IllegalArgumentException();
+		}
+		String s = String.valueOf(num);
+		if (s.length() != n) {
+			return false;
+		}
+		for (char digit = '1'; digit <= Character.forDigit(n, 10); digit++) {
+			if (s.indexOf(digit) < 0) {
+				return false;
+			}
+		}
+		return true;
+	}
 }

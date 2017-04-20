@@ -50,4 +50,41 @@ public class NumberUtilTest {
 		assertThat(NumberUtil.factorial(20)).isEqualTo(2432902008176640000L);
 	}
 	
+	@Test
+	public void testIsPandigital_falseForNonPandigitals() {
+		assertThat(NumberUtil.isPandigital(0)).isFalse();
+		assertThat(NumberUtil.isPandigital(1)).isFalse();
+		assertThat(NumberUtil.isPandigital(2)).isFalse();
+		assertThat(NumberUtil.isPandigital(123)).isFalse();
+		assertThat(NumberUtil.isPandigital(1234567890)).isFalse();
+	}
+	
+	@Test
+	public void testIsPandigital_trueForPandigitals() {
+		assertThat(NumberUtil.isPandigital(123456789)).isTrue();
+		assertThat(NumberUtil.isPandigital(987654321)).isTrue();
+		assertThat(NumberUtil.isPandigital(381654729)).isTrue();
+	}
+
+	@Test
+	public void testIsNPandigital_falseForNonNPandigitals() {
+		assertThat(NumberUtil.isNPandigital(0, 1)).isFalse();
+		assertThat(NumberUtil.isNPandigital(0, 9)).isFalse();
+		assertThat(NumberUtil.isNPandigital(1, 2)).isFalse();
+		assertThat(NumberUtil.isNPandigital(2, 1)).isFalse();
+		assertThat(NumberUtil.isNPandigital(123, 1)).isFalse();
+		assertThat(NumberUtil.isNPandigital(123, 2)).isFalse();
+		assertThat(NumberUtil.isNPandigital(123, 4)).isFalse();
+		assertThat(NumberUtil.isNPandigital(1023, 3)).isFalse();
+	}
+	
+	@Test
+	public void testIsNPandigital_trueForNPandigitals() {
+		assertThat(NumberUtil.isNPandigital(1, 1)).isTrue();
+		assertThat(NumberUtil.isNPandigital(21, 2)).isTrue();
+		assertThat(NumberUtil.isNPandigital(123, 3)).isTrue();
+		assertThat(NumberUtil.isNPandigital(231, 3)).isTrue();
+		assertThat(NumberUtil.isNPandigital(123456789, 9)).isTrue();
+	}
+	
 }

@@ -3,6 +3,7 @@ package problems.impl.problem32;
 import java.util.HashSet;
 import java.util.Set;
 
+import common.util.NumberUtil;
 import problems.ProblemSolver;
 
 public class Problem32Solver implements ProblemSolver {
@@ -44,14 +45,6 @@ public class Problem32Solver implements ProblemSolver {
 
 	private static boolean isPanDigital(int i, int j, long res) {
 		String digits = String.valueOf(i) + String.valueOf(j) + String.valueOf(res);
-		if (digits.length() != 9) {
-			return false;
-		}
-		for (char digit = '1'; digit <= '9'; digit++) {
-			if (digits.indexOf(digit) < 0) {
-				return false;
-			}
-		}
-		return true;
+		return NumberUtil.isPandigital(Long.valueOf(digits));
 	}
 }

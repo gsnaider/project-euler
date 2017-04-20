@@ -1,5 +1,6 @@
 package problems.impl.problem38;
 
+import common.util.NumberUtil;
 import problems.ProblemSolver;
 
 public class Problem38Solver implements ProblemSolver {
@@ -50,15 +51,7 @@ public class Problem38Solver implements ProblemSolver {
 	}
 
 	private static boolean isPanDigital(String num) {
-		if (num.length() != 9) {
-			return false;
-		}
-		for (char digit = '1'; digit <= '9'; digit++) {
-			if (num.indexOf(digit) < 0) {
-				return false;
-			}
-		}
-		return true;
+		return NumberUtil.isPandigital(Long.valueOf(num));
 	}
 
 }
