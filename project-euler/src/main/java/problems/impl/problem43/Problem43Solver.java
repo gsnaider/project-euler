@@ -19,14 +19,14 @@ public class Problem43Solver implements ProblemSolver {
 			boolean property = true;
 			for (int i = 1; i <= divisors.size(); i++) {
 				String subNumber = pandigital.substring(i, i + 3);
-				int num = Integer.valueOf(subNumber);
+				int num = Integer.parseInt(subNumber);
 				if (num % divisors.get(i - 1) != 0) {
 					property = false;
 					break;
 				}
 			}
 			if (property) {
-				sum += Long.valueOf(pandigital);
+				sum += Long.parseLong(pandigital);
 			}
 		}
 		return String.valueOf(sum);
