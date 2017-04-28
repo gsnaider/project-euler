@@ -65,6 +65,25 @@ public class NumberUtilTest {
 		assertThat(NumberUtil.isPandigital(987654321)).isTrue();
 		assertThat(NumberUtil.isPandigital(381654729)).isTrue();
 	}
+	
+	@Test
+	public void testIsZeroPandigital_falseForNonZeroPandigitals() {
+		assertThat(NumberUtil.isZeroPandigital(0)).isFalse();
+		assertThat(NumberUtil.isZeroPandigital(1)).isFalse();
+		assertThat(NumberUtil.isZeroPandigital(2)).isFalse();
+		assertThat(NumberUtil.isZeroPandigital(123)).isFalse();
+		assertThat(NumberUtil.isZeroPandigital(1123456789)).isFalse();
+	}
+	
+	@Test
+	public void testIsZeroPandigital_trueForZeroPandigitals() {
+		assertThat(NumberUtil.isZeroPandigital(1234567890L)).isTrue();
+		assertThat(NumberUtil.isZeroPandigital(9876543210L)).isTrue();
+		assertThat(NumberUtil.isZeroPandigital(3816540729L)).isTrue();
+		
+		// Number can start with 0.
+		assertThat(NumberUtil.isZeroPandigital(123456789L)).isTrue();
+	}
 
 	@Test
 	public void testIsNPandigital_falseForNonNPandigitals() {

@@ -60,6 +60,24 @@ public final class NumberUtil {
 	}
 
 	/**
+	 * Returns true if {@code num} is a zero-pandigital number. A
+	 * zero-pandigital number is a 10-digit number that uses all of the digits 0
+	 * to 9 exactly once. Note that this will also return true if
+	 * {@link NumberUtil#isPandigital(num)} is true, since a pandigital number
+	 * can have a 0 as the left-most digit and also be zero-pandigital.
+	 * 
+	 * 
+	 * @param num
+	 *            A non-negative number to be checked if it's zero-pandigital.
+	 * 
+	 * @throws IllegalArgumentException
+	 *             if {@code num} is less than 0.
+	 */
+	public static boolean isZeroPandigital(long num) {
+		return isPandigital(num) || isNZeroPandigital(num, 9);
+	}
+
+	/**
 	 * Returns true if {@code num} is an {@code n}-pandigital number. An
 	 * n-pandigital number is an n-digit number that uses all of the digits 1 to
 	 * n exactly once.
@@ -69,9 +87,10 @@ public final class NumberUtil {
 	 * @param n
 	 *            A number between 1 and 9 which specifies the digits to use for
 	 *            checking the pandigital condition.
-	 *            
+	 * 
 	 * @throws IllegalArgumentException
-	 *             if {@code num} is less than 0 or if {@code n} is not between 1 and 9.
+	 *             if {@code num} is less than 0 or if {@code n} is not between
+	 *             1 and 9.
 	 */
 	public static boolean isNPandigital(long num, int n) {
 		if (num < 0 || n < 1 || n > 9) {
@@ -82,6 +101,37 @@ public final class NumberUtil {
 			return false;
 		}
 		for (char digit = '1'; digit <= Character.forDigit(n, 10); digit++) {
+			if (s.indexOf(digit) < 0) {
+				return false;
+			}
+		}
+		return true;
+	}
+
+	/**
+	 * Returns true if {@code num} is an {@code n}-zero-pandigital number. An
+	 * n-zero-pandigital number is an (n+1)-digit number that uses all of the
+	 * digits 0 to n exactly once.
+	 * 
+	 * @param num
+	 *            A non-negative number to be checked if it's n-pandigital.
+	 * @param n
+	 *            A number between 0 and 9 which specifies the digits to use for
+	 *            checking the pandigital condition.
+	 * 
+	 * @throws IllegalArgumentException
+	 *             if {@code num} is less than 0 or if {@code n} is not between
+	 *             0 and 9.
+	 */
+	private static boolean isNZeroPandigital(long num, int n) {
+		if (num < 0 || n < 0 || n > 9) {
+			throw new IllegalArgumentException();
+		}
+		String s = String.valueOf(num);
+		if (s.length() != (n + 1)) {
+			return false;
+		}
+		for (char digit = '0'; digit <= Character.forDigit(n, 10); digit++) {
 			if (s.indexOf(digit) < 0) {
 				return false;
 			}
