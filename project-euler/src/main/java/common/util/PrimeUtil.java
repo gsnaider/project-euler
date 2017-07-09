@@ -1,5 +1,7 @@
 package common.util;
 
+import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class PrimeUtil {
@@ -80,12 +82,27 @@ public class PrimeUtil {
 	 * @param n
 	 *            The number for which to find its prime factors. Must be
 	 *            greater than 1.
-	 *
+	 * @param primes
+	 *            The list of primes to use for finding factors.
 	 * @throws IllegalArgumentException
 	 *             if {@code n} is less or equal than 1.
 	 */
-	public static Map<Integer, Integer> primeFactors(int n) {
-		// TODO Auto-generated method stub
-		return null;
+	public static Map<Long, Integer> primeFactors(long n, List<Long> primes) {
+		Map<Long, Integer> factors = new HashMap<>();
+		while (n > 1) {
+			for (long prime : primes) {
+				if (n % prime == 0) {
+					if (factors.containsKey(prime)) {
+						factors.put(prime, factors.get(prime) + 1);
+					} else {
+						factors.put(prime, 1);
+					}
+					n = n / prime;
+					break;
+				}
+			}
+		}
+		return factors;
 	}
+
 }
