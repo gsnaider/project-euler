@@ -1,5 +1,7 @@
 package common.util;
 
+import java.util.Map;
+
 public class PrimeUtil {
 
 	/**
@@ -68,5 +70,22 @@ public class PrimeUtil {
 			}
 		}
 		return true;
+	}
+
+	/**
+	 * Returns the prime factors corresponding to {@code n} as a Map where each
+	 * key corresponds to a prime factor, and the value corresponds to the
+	 * exponent of that factor.
+	 *
+	 * @param n
+	 *            The number for which to find its prime factors. Must be
+	 *            greater than 1.
+	 *
+	 * @throws IllegalArgumentException
+	 *             if {@code n} is less or equal than 1.
+	 */
+	public static Map<Integer, Integer> primeFactors(int n) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }
