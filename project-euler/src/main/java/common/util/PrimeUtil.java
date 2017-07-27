@@ -1,6 +1,7 @@
 package common.util;
 
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -68,6 +69,40 @@ public class PrimeUtil {
 		// Only check odd numbers up until square root.
 		for (int i = 3; i <= sqrt; i += 2) {
 			if (n % i == 0) {
+				return false;
+			}
+		}
+		return true;
+	}
+
+	/**
+	 * Returns true if {@code n} is a prime number. A prime number is a natural
+	 * number greater than 1 that has no positive divisors other than 1 and
+	 * itself.
+	 *
+	 * @param n
+	 *            The number to be checked if it's prime. Must be equal or
+	 *            greater than 0.
+	 * @param primes
+	 *            A list of all primes less than {@code n}.
+	 * @throws IllegalArgumentException
+	 *             if {@code n} is less than 0.
+	 */
+	public static boolean isPrime(long n, List<Long> primes) {
+		if (n < 0) {
+			throw new IllegalArgumentException();
+		}
+		if (n < 2) {
+			return false;
+		}
+
+		final long sqrt = Math.round(Math.sqrt(n));
+		
+		long prime = 0;
+		Iterator<Long> iterator = primes.iterator();
+		while(iterator.hasNext() && prime <= sqrt){
+			prime = iterator.next();
+			if (n % prime == 0) {
 				return false;
 			}
 		}
