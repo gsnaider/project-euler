@@ -1,6 +1,7 @@
 package common.util;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 public final class StringUtil {
@@ -21,6 +22,35 @@ public final class StringUtil {
 	 */
 	public static boolean isPalindrome(String s) {
 		return s.equals(new StringBuilder(s).reverse().toString());
+	}
+	
+	/**
+	 * Returns a Set containing all of the possible permutations formed with
+	 * {@code chars} of size {@code length}.
+	 */
+	public static Set<String> permutations(List<Character> chars, int length) {
+		if (chars == null || chars.isEmpty()) {
+			throw new IllegalArgumentException();
+		}
+		if (length < 1) {
+			throw new IllegalArgumentException();
+		}
+		
+		Set<String> permutations = new HashSet<>();
+		if (length == 1) {
+			for (Character c : chars) {
+				permutations.add(c.toString());
+			}
+		} else {
+			Set<String> shorterPermutations = permutations(chars, length - 1);
+			for (String shorterPermutation : shorterPermutations) {
+				for (char c : chars) {
+					permutations.add(shorterPermutation + c);
+				}
+			}
+		}
+		
+		return permutations;
 	}
 
 	/**

@@ -4,6 +4,8 @@ import static com.google.common.truth.Truth.assertThat;
 
 import org.junit.Test;
 
+import com.google.common.collect.ImmutableList;
+
 public class StringUtilTest {
 
 	@Test
@@ -62,5 +64,14 @@ public class StringUtilTest {
 		assertThat(StringUtil.permutations("AB")).containsExactly("AB", "BA");
 		assertThat(StringUtil.permutations("AAB")).containsExactly("AAB", "ABA", "BAA");
 		assertThat(StringUtil.permutations("ABC")).containsExactly("ABC", "ACB", "BAC", "BCA", "CAB", "CBA");
+	}
+	
+	@Test
+	public void testPermutationsWithCharList() {
+		ImmutableList<Character> chars = ImmutableList.of('A', 'B', 'C');
+		
+		assertThat(StringUtil.permutations(chars, 1)).containsExactly("A", "B", "C");
+		assertThat(StringUtil.permutations(chars, 2)).containsExactly("AA", "AB", "AC", "BA", "BB", "BC", "CA", "CB", "CC");
+		
 	}
 }
