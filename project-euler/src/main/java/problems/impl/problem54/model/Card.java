@@ -1,6 +1,6 @@
 package problems.impl.problem54.model;
 
-public class Card {
+public final class Card {
 
 	private final Value value;
 	private final Suit suit;
