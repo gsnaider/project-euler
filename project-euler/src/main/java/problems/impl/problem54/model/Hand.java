@@ -4,14 +4,16 @@ import java.util.Set;
 
 import com.google.common.collect.ImmutableSet;
 
-public final class Hand implements Comparable<Hand> {
+import problems.impl.problem54.model.rank.HandRank;
+import problems.impl.problem54.model.rank.Rank;
+import problems.impl.problem54.util.RankEvaluator;
 
-	private static final int ALLOWED_CARDS = 5;
+public final class Hand implements Comparable<Hand> {
 
 	private ImmutableSet<Card> cards;
 
 	public Hand(ImmutableSet<Card> cards) {
-		if (cards.size() != ALLOWED_CARDS) {
+		if (cards.size() != Poker.ALLOWED_CARDS) {
 			throw new IllegalArgumentException();
 		}
 		this.cards = cards;
@@ -23,8 +25,17 @@ public final class Hand implements Comparable<Hand> {
 
 	@Override
 	public int compareTo(Hand that) {
-		// TODO Auto-generated method stub
-		return 0;
+		HandRank thisRank = this.rank();
+		HandRank thatRank = that.rank();
+		if (thisRank.compareTo(thatRank) > 0) {
+			return 1;
+		} else {
+			return -1;
+		}
+	}
+
+	private HandRank rank() {
+		return RankEvaluator.evaluateRank(this);
 	}
 
 }

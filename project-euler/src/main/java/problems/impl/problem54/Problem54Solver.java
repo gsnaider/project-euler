@@ -18,13 +18,13 @@ public class Problem54Solver implements ProblemSolver {
 		List<String> games = FileUtil.readLines(FILE_PATH);
 		
 		int playerOneWins = 0;
+
 		for (String gameCode : games) {
 			Game game = GameReader.read(gameCode);
 			if (game.winner() == 1) {
 				playerOneWins++;
 			}
 		}
-		
 		return String.valueOf(playerOneWins);
 	}
 

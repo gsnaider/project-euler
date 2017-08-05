@@ -15,14 +15,14 @@ public enum Value {
 	KING(13),
 	ACE(14);
 	
-	private final int value;
+	private final int number;
 	
-	Value(int value) {
-		this.value = value;
+	Value(int number) {
+		this.number = number;
 	}
 	
-	public int value() {
-		return value;
+	public int number() {
+		return number;
 	}
 	
 }

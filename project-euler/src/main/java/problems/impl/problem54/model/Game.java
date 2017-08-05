@@ -18,4 +18,19 @@ public final class Game {
 		}
 	}
 	
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Player One Hand: ");
+		for (Card card : playerOneHand.getCards()) {
+			builder.append(card + " ");
+		}
+		builder.append('\n');
+		builder.append("Player Two Hand: ");
+		for (Card card : playerTwoHand.getCards()) {
+			builder.append(card + " ");
+		}
+		return builder.toString();
+	}
+	
 }
