@@ -9,6 +9,15 @@ import com.google.common.collect.ImmutableList;
 public class StringUtilTest {
 
 	@Test
+	public void testReverse() {
+		assertThat(StringUtil.reverse("")).isEqualTo("");
+		assertThat(StringUtil.reverse("A")).isEqualTo("A");
+		assertThat(StringUtil.reverse("AA")).isEqualTo("AA");
+		assertThat(StringUtil.reverse("ABC")).isEqualTo("CBA");
+		assertThat(StringUtil.reverse("ABCD")).isEqualTo("DCBA");
+	}
+	
+	@Test
 	public void testIsPalindromeReturnsTrueForEmptyString() {
 		assertThat(StringUtil.isPalindrome("")).isTrue();
 	}
@@ -69,9 +78,7 @@ public class StringUtilTest {
 	@Test
 	public void testPermutationsWithCharList() {
 		ImmutableList<Character> chars = ImmutableList.of('A', 'B', 'C');
-		
 		assertThat(StringUtil.permutations(chars, 1)).containsExactly("A", "B", "C");
 		assertThat(StringUtil.permutations(chars, 2)).containsExactly("AA", "AB", "AC", "BA", "BB", "BC", "CA", "CB", "CC");
-		
 	}
 }

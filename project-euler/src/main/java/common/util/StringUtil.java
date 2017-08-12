@@ -8,7 +8,15 @@ public final class StringUtil {
 
 	private StringUtil() {
 	}
-
+	
+	/**
+	 * Returns a String which is the reverse of {@code s}.
+	 * @param s The String to be reversed.
+	 */
+	public static String reverse(String s) {
+		return new StringBuilder(s).reverse().toString();
+	}
+	
 	/**
 	 * Returns true if {@code s} is a palindrome.
 	 * 
@@ -17,11 +25,9 @@ public final class StringUtil {
 	 * forward. In this method, every character is used for verifying if the
 	 * String is a palindrome, including spaces, punctuation, upper-case and
 	 * lower-case.
-	 * 
-	 * @return
 	 */
 	public static boolean isPalindrome(String s) {
-		return s.equals(new StringBuilder(s).reverse().toString());
+		return s.equals(reverse(s));
 	}
 	
 	/**
