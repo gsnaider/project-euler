@@ -8,7 +8,6 @@ public class Problem39Solver implements ProblemSolver {
 
 	@Override
 	public String solve() {
-		System.out.println(calculateSolutions(120));
 		int maxSolutions = 0;
 		int maxP = 0;
 		for (int p = 3; p <= MAX_P; p++) {

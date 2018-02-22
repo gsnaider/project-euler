@@ -1,6 +1,6 @@
 package common.util;
 
-import static com.google.common.truth.Truth.assertThat;
+import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.Test;
 
@@ -16,7 +16,7 @@ public class StringUtilTest {
 		assertThat(StringUtil.reverse("ABC")).isEqualTo("CBA");
 		assertThat(StringUtil.reverse("ABCD")).isEqualTo("DCBA");
 	}
-	
+
 	@Test
 	public void testIsPalindromeReturnsTrueForEmptyString() {
 		assertThat(StringUtil.isPalindrome("")).isTrue();
@@ -68,17 +68,18 @@ public class StringUtilTest {
 
 	@Test
 	public void testPermutations() {
-		assertThat(StringUtil.permutations("")).containsExactly("");
-		assertThat(StringUtil.permutations("A")).containsExactly("A");
-		assertThat(StringUtil.permutations("AB")).containsExactly("AB", "BA");
-		assertThat(StringUtil.permutations("AAB")).containsExactly("AAB", "ABA", "BAA");
-		assertThat(StringUtil.permutations("ABC")).containsExactly("ABC", "ACB", "BAC", "BCA", "CAB", "CBA");
+		assertThat(StringUtil.permutations("")).containsExactlyInAnyOrder("");
+		assertThat(StringUtil.permutations("A")).containsExactlyInAnyOrder("A");
+		assertThat(StringUtil.permutations("AB")).containsExactlyInAnyOrder("AB", "BA");
+		assertThat(StringUtil.permutations("AAB")).containsExactlyInAnyOrder("AAB", "ABA", "BAA");
+		assertThat(StringUtil.permutations("ABC")).containsExactlyInAnyOrder("ABC", "ACB", "BAC", "BCA", "CAB", "CBA");
 	}
-	
+
 	@Test
 	public void testPermutationsWithCharList() {
 		ImmutableList<Character> chars = ImmutableList.of('A', 'B', 'C');
-		assertThat(StringUtil.permutations(chars, 1)).containsExactly("A", "B", "C");
-		assertThat(StringUtil.permutations(chars, 2)).containsExactly("AA", "AB", "AC", "BA", "BB", "BC", "CA", "CB", "CC");
+		assertThat(StringUtil.permutations(chars, 1)).containsExactlyInAnyOrder("A", "B", "C");
+		assertThat(StringUtil.permutations(chars, 2)).containsExactlyInAnyOrder("AA", "AB", "AC", "BA", "BB", "BC",
+				"CA", "CB", "CC");
 	}
 }

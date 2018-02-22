@@ -5,7 +5,6 @@ import java.util.Set;
 import com.google.common.collect.ImmutableSet;
 
 import problems.impl.problem54.model.rank.HandRank;
-import problems.impl.problem54.model.rank.Rank;
 import problems.impl.problem54.util.RankEvaluator;
 
 public final class Hand implements Comparable<Hand> {

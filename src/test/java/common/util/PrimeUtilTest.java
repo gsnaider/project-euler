@@ -1,6 +1,6 @@
 package common.util;
 
-import static com.google.common.truth.Truth.assertThat;
+import static org.assertj.core.api.Assertions.assertThat;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -75,7 +75,8 @@ public class PrimeUtilTest {
 	@Test
 	public void testPrimeFactorsForPrimes() {
 		for (long prime : primes) {
-			assertThat(PrimeUtil.primeFactors(prime, primes)).containsExactly(prime, 1);
+			Map<Long, Integer> expectedFactors = ImmutableMap.of(prime, 1);
+			assertThat(PrimeUtil.primeFactors(prime, primes)).isEqualTo(expectedFactors);
 		}
 	}
 }
