@@ -1,22 +1,27 @@
 package common.util;
 
+import java.io.FileNotFoundException;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
 public final class StringUtil {
 
+	private static final String COMMON_ENGLISH_WORDS_FILE_PATH = "common/english-words.txt";
+
 	private StringUtil() {
 	}
-	
+
 	/**
 	 * Returns a String which is the reverse of {@code s}.
-	 * @param s The String to be reversed.
+	 * 
+	 * @param s
+	 *            The String to be reversed.
 	 */
 	public static String reverse(String s) {
 		return new StringBuilder(s).reverse().toString();
 	}
-	
+
 	/**
 	 * Returns true if {@code s} is a palindrome.
 	 * 
@@ -29,7 +34,7 @@ public final class StringUtil {
 	public static boolean isPalindrome(String s) {
 		return s.equals(reverse(s));
 	}
-	
+
 	/**
 	 * Returns a Set containing all of the possible permutations formed with
 	 * {@code chars} of size {@code length}.
@@ -41,7 +46,7 @@ public final class StringUtil {
 		if (length < 1) {
 			throw new IllegalArgumentException();
 		}
-		
+
 		Set<String> permutations = new HashSet<>();
 		if (length == 1) {
 			for (Character c : chars) {
@@ -55,7 +60,7 @@ public final class StringUtil {
 				}
 			}
 		}
-		
+
 		return permutations;
 	}
 
@@ -66,7 +71,7 @@ public final class StringUtil {
 	public static Set<String> permutations(String s) {
 		return permutations("", s);
 	}
-	
+
 	private static Set<String> permutations(String prefix, String s) {
 		Set<String> permutations = new HashSet<>();
 		if (s.isEmpty()) {
@@ -80,6 +85,21 @@ public final class StringUtil {
 			permutations.addAll(permutations(prefixWithChar, stringWithoutChar));
 		}
 		return permutations;
+	}
+
+	/**
+	 * Returns a List containing the most common English words in lower-case,
+	 * sorted by frequency of use.
+	 * 
+	 * <p>The words are read from the file in
+	 * {@code src/main/resources/common/english-words.txt}, in which each line
+	 * contains a single word.
+	 * 
+	 * @throws FileNotFoundException
+	 *             if the file containing the English words is not found
+	 */
+	public static List<String> commonEnglishWords() throws FileNotFoundException {
+		return FileUtil.readLines(COMMON_ENGLISH_WORDS_FILE_PATH);
 	}
 
 }
