@@ -43,7 +43,8 @@ public final class FileUtil {
 	 *             if the file is not found
 	 */
 	public static List<List<String>> readCsvFile(String filePath) throws FileNotFoundException {
-		return readLines(filePath).stream().map(line -> Lists.newArrayList(line.split(","))).collect(Collectors.toList());
+		// TODO: fix compilation error
+		return readLines(filePath).stream().map(line -> Lists.newArrayList(line.split(","))).collect(Collectors.toList<>());
 	}
 
 }
